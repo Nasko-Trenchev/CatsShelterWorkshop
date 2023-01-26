@@ -1,0 +1,27 @@
+{
+  "name": "catsshelterworkshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nasko-Trenchev/CatsShelterWorkshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nasko-Trenchev/CatsShelterWorkshop/issues"
+  },
+  "homepage": "https://github.com/Nasko-Trenchev/CatsShelterWorkshop#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
