@@ -1,11 +1,12 @@
 const express = require("express");
 
-const viewEngine = require('./config/viewEngine');
+const setupViewEngine = require('./config/viewEngine');
 const routs = require('./routes');
 
 
 const app = express();
-viewEngine(app);
+
+setupViewEngine(app);
 
 app.use(express.static('src/public'));
 app.use(express.urlencoded({extended: false}));

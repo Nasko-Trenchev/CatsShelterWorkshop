@@ -1,4 +1,3 @@
-const router = require("../routes");
 
 
 exports.getHomePage = (req, res) =>{
