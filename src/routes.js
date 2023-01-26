@@ -9,7 +9,7 @@ router.get('/cats/add-breed', catsController.addBreedPage);
 
 router.get('/cats/add-cat', catsController.addCatPage);
 
-router.get('/cat/shelter', catsController.catShelterPage);
+router.get('/cat/shelter/:id', catsController.catShelterPage);
 
 router.get('/cats/edit/:id', catsController.catsEditPage);
 
