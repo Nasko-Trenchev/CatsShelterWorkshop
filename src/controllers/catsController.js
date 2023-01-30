@@ -35,9 +35,8 @@ exports.catShelterPage = (req, res) =>{
     res.render('catShelter', {cat});
 }
 
-exports.catsEditPage = (req, res) =>{
+exports.catsEditPage = async (req, res) =>{
 
-    const id = req.params.id;
-
-    res.render('editCat', {id});
+    let cat = await Cat.findById(req.params.catId).lean();
+    res.render('editCat', {cat});
 }
