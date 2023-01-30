@@ -14,6 +14,6 @@ router.post('/cats/add-cat', catsController.addCatPostPage);
 router.get('/cat/shelter/:catId', catsController.catShelterPage);
 
 router.get('/cats/edit/:catId', catsController.catsEditPage);
-//router.post('/cats/edit/:catId', catsController.cat);
+router.post('/cats/edit/:catId', catsController.catsPostEditPage);
 
 module.exports = router;

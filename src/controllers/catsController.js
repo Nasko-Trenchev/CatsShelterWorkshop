@@ -36,7 +36,19 @@ exports.catShelterPage = (req, res) =>{
 }
 
 exports.catsEditPage = async (req, res) =>{
-
     let cat = await Cat.findById(req.params.catId).lean();
-    res.render('editCat', {cat});
+    let breeds = await Breed.find().lean();
+    res.render('editCat', {cat, breeds});
+}
+
+exports.catsPostEditPage = async (req, res) =>{
+
+    let cat = await Cat.findById(req.params.catId);
+
+    const {name, description, imageUrl, breed} = req.body;
+    cat.name = name;
+    cat.description = description;
+    cat.breed = breed;
+    await cat.save();
+    res.redirect('/');
 }

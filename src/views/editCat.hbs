@@ -2,14 +2,16 @@
         <form action="/cats/edit/{{cat._id}}" method="POST" class="cat-form">
             <h2>Edit Cat</h2>
             <label for="name">Name</label>
-            <input type="text" id="name" value="{{cat.name}}">
-            <label for="description">Description</label>
-            <textarea id="description">{{cat.description}}</textarea>
+            <input type="text" id="name" value="{{cat.name}}" name="name">
+            <label for="description" >Description</label>
+            <textarea id="description" name="description">{{cat.description}}</textarea>
             <label for="image">Image</label>
             <input type="file" id="image">
             <label for="group">Breed</label>
-            <select id="group">
-                <option value="Fluffy Cat">{{cat.breed}}</option>
+            <select id="group" name="breed">
+                {{#each breeds}}
+                <option value="Fluffy Cat">{{breed}}</option>
+                {{/each}}
             </select>
             <button>Edit Cat</button>
         </form>
