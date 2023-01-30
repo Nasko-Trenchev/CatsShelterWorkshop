@@ -5,8 +5,8 @@ const catShema = new mongoose.Schema({
         type : String,
         required: true
     },
-    age: {
-        ty: Number,
+    description: {
+        type: String,
         required: true
     },
     imageUrl: {

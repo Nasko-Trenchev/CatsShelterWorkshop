@@ -1,4 +1,4 @@
-const cats = require('../database/cats.json');
+const catDb = require('../models/Cat');
 
 exports.addBreedPage = (req, res) =>{
 
@@ -10,11 +10,10 @@ exports.addCatPage = (req, res) =>{
     res.render('addCat');
 }
 
-
 exports.catShelterPage = (req, res) =>{
 
-    let currentCat = cats.find(cat => cat.id == req.params.id);
-    res.render('catShelter', {currentCat});
+    let cat = catDb.findById(req.params.catId);
+    res.render('catShelter', {cat});
 }
 
 exports.catsEditPage = (req, res) =>{
