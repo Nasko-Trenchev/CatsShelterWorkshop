@@ -18,6 +18,10 @@ const catShema = new mongoose.Schema({
     }
 })
 
+catShema.statics.deleteById = function(_id) {
+    return this.deleteOne({ _id: _id })
+  };
+
 const Cat = mongoose.model('Cat', catShema);
 
 module.exports = Cat;

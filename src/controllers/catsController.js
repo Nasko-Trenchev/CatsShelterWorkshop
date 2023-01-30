@@ -37,6 +37,14 @@ exports.catShelterPage = async (req, res) =>{
     res.render('catShelter', {cat});
 }
 
+exports.CatShelterEditPage = async (req, res) =>{
+
+    let cat = await Cat.findById(req.params.catId).lean();
+
+    await Cat.deleteById(cat._id);
+    res.redirect('/');
+}
+
 exports.catsEditPage = async (req, res) =>{
     let cat = await Cat.findById(req.params.catId).lean();
     let breeds = await Breed.find().lean();
