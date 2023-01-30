@@ -11,8 +11,7 @@ const catShema = new mongoose.Schema({
     },
     imageUrl: {
         type: String,
-        required: true
-    },
+        },
     breed: {
         type: String,
         required: true

@@ -1,3 +1,4 @@
+const Cat = require('../models/Cat');
 const catDb = require('../models/Cat');
 
 exports.addBreedPage = (req, res) =>{
@@ -6,8 +7,17 @@ exports.addBreedPage = (req, res) =>{
 }
 
 exports.addCatPage = (req, res) =>{
-    
     res.render('addCat');
+}
+
+exports.addCatPostPage = async (req, res) =>{
+    const {name, imageUrl, breed, description} = req.body;
+
+    let cat = new Cat({name, imageUrl, breed, description});
+
+    await cat.save();
+
+    res.redirect('/');
 }
 
 exports.catShelterPage = (req, res) =>{
