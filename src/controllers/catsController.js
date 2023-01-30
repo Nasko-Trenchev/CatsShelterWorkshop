@@ -1,9 +1,18 @@
 const Cat = require('../models/Cat');
-const catDb = require('../models/Cat');
+const Breed = require('../models/Breed');
 
 exports.addBreedPage = (req, res) =>{
-
     res.render('addBreed')
+}
+
+exports.addBreedPostPage = async (req, res) =>{
+
+    const {breed} = req.body;
+
+    const newBreed = new Breed({breed});
+    await newBreed.save();
+
+    res.redirect('/');
 }
 
 exports.addCatPage = (req, res) =>{
@@ -22,7 +31,7 @@ exports.addCatPostPage = async (req, res) =>{
 
 exports.catShelterPage = (req, res) =>{
 
-    let cat = catDb.findById(req.params.catId);
+    let cat = Cat.findById(req.params.catId);
     res.render('catShelter', {cat});
 }
 
