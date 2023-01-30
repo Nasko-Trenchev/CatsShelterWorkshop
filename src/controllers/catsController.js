@@ -15,8 +15,10 @@ exports.addBreedPostPage = async (req, res) =>{
     res.redirect('/');
 }
 
-exports.addCatPage = (req, res) =>{
-    res.render('addCat');
+exports.addCatPage = async (req, res) =>{
+
+    let breeds = await Breed.find().lean();
+    res.render('addCat', {breeds});
 }
 
 exports.addCatPostPage = async (req, res) =>{
@@ -29,9 +31,9 @@ exports.addCatPostPage = async (req, res) =>{
     res.redirect('/');
 }
 
-exports.catShelterPage = (req, res) =>{
+exports.catShelterPage = async (req, res) =>{
 
-    let cat = Cat.findById(req.params.catId);
+    let cat = await Cat.findById(req.params.catId).lean();
     res.render('catShelter', {cat});
 }
 

@@ -8,9 +8,9 @@
             <label for="image">Image</label>
             <input type="file" id="image">
             <label for="group">Breed</label>
-            <select id="group" name="breed">
+            <select name="breed" id="group">
                 {{#each breeds}}
-                <option value="Fluffy Cat">{{breed}}</option>
+                <option value="{{this.breed}}">{{breed}}</option>
                 {{/each}}
             </select>
             <button>Edit Cat</button>
