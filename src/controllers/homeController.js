@@ -9,7 +9,7 @@ exports.getHomePage = async (req, res) =>{
 
         cats = cats.filter(cat => cat.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
     }
-    res.render('index', {cats});
+    res.render('index', {cats, search});
 }
 
 exports.getSearch = async (req, res) =>{
